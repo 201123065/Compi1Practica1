@@ -1,0 +1,29 @@
+package Compi1Practica1;
+
+import java.io.*;
+import java.util.*;
+import java_cup.runtime.*;
+
+action code
+{:
+//:D
+:};
+
+parser code
+{:
+        public static void main(String args[])throw Exception{
+        new parser(new Yylex (new FileInputStream(args[0]))).parse();}
+        
+        public static void cargar(Strnig Archivo)throws Exception{
+        new parser(new Yylex(new FileInputStream(Archivo))).parse();}
+
+:}
+
+terminal NIT,NOMBRE,SEPARADOR,FIN;
+non terminal INICIO,ER;
+start with INICIO;
+INICIO::=ER
+        ;
+ER::=NIT SEPARADOR NOMBRE FIN {://wawa++; :}ER
+    |
+    ;
